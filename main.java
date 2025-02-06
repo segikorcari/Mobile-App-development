@@ -1,13 +1,9 @@
-package com.example.rockpaperscissors;
-
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.squareup.picasso.Picasso;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
         String[] choices = {"rock", "paper", "scissors"};
         String computerSelection = choices[random.nextInt(3)];
 
+        
         setImage(playerChoice, playerSelection);
         setImage(computerChoice, computerSelection);
 
         String result = getResult(playerSelection, computerSelection);
         resultText.setText(result);
-
         scoreText.setText("Player: " + playerScore + " - Computer: " + computerScore);
 
         if (playerScore == 10 || computerScore == 10) {
@@ -58,17 +54,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setImage(ImageView imageView, String choice) {
+        String imageUrl = "";
+
         switch (choice) {
             case "rock":
-                imageView.setImageResource(R.drawable.rock);
+                imageUrl = "rock.jpeg"; 
                 break;
             case "paper":
-                imageView.setImageResource(R.drawable.paper);
+                imageUrl = "paper.png"; 
                 break;
             case "scissors":
-                imageView.setImageResource(R.drawable.scissors);
+                imageUrl = "scissors.png"; 
                 break;
         }
+
+        // Ngarko imazhin nga URL duke përdorur Picasso
+        Picasso.get().load(imageUrl).into(imageView);
     }
 
     private String getResult(String player, String computer) {
@@ -105,3 +106,4 @@ public class MainActivity extends AppCompatActivity {
         resetButton.setVisibility(View.GONE);
     }
 }
+
