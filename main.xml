@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player: 0 - Computer: 0"
+        android:textSize="18sp"/>
+
+    <ImageView
+        android:id="@+id/player_choice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VS"
+        android:textSize="22sp"/>
+
+    <ImageView
+        android:id="@+id/computer_choice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Rock, Paper, or Scissors"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/rock_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rock"/>
+
+        <Button
+            android:id="@+id/paper_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paper"/>
+
+        <Button
+            android:id="@+id/scissors_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scissors"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Again"
+        android:visibility="gone"/>
+
+</LinearLayout>
